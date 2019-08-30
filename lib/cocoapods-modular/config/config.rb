@@ -1,17 +1,17 @@
 require 'yaml'
 
-module CBin
+module CMod
   class Config
     def config_file
-      File.expand_path("#{Pod::Config.instance.home_dir}/bin.yml") 
+      File.expand_path("#{Pod::Config.instance.home_dir}/modular.yml") 
     end
 
 
     def template_hash
       {
-        'code_repo_url' => { description: '源码私有源 Git 地址', default: 'git@git.2dfire.net:ios/cocoapods-spec.git' },
-        'binary_repo_url' => { description: '二进制私有源 Git 地址', default: 'git@git.2dfire.net:ios/cocoapods-spec-binary.git' },
-        'binary_download_url' => { description: '二进制下载地址，内部会依次传入组件名称与版本，替换字符串中的 %s ', default: 'http://iosframeworkserver-shopkeeperclient.app.2dfire.com/download/%s/%s.zip' },
+        'code_repo_url' => { description: '源码私有源 Git 地址', default: 'git@git.wb-intra.com:ios_group/base-specs.git' },
+        'binary_repo_url' => { description: '二进制私有源 Git 地址', default: 'git@git.wb-intra.com:ios_base_libraries_complied/Spec.git' },
+        'binary_download_url' => { description: '二进制下载地址，内部会依次传入组件名称与版本，替换字符串中的 %s ', default: 'http://iosstore.wb-intra.com/Binary/%s/%s.zip' },
         # 'binary_type' => { description: '二进制打包类型', default: 'framework', selection: %w[framework library] },
         'download_file_type' => { description: '下载二进制文件类型', default: 'zip', selection: %w[zip tgz tar tbz txz dmg] },
       }

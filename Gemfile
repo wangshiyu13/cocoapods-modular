@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in cocoapods-bin.gemspec
-gemspec
+# Specify your gem's dependencies in cocoapods-modular.gemspec
 
 group :development do
-  gem 'cocoapods', '1.7.1'
+  gem 'cocoapods', '1.7.5'
 
   gem 'mocha'
   gem 'bacon'

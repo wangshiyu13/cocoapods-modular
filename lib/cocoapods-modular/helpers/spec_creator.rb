@@ -1,7 +1,7 @@
 require 'cocoapods'
-require 'cocoapods-bin/config/config'
+require 'cocoapods-modular/config/config'
 
-module CBin
+module CMod
   class Specification
     class Creator
       attr_reader :code_spec
@@ -106,7 +106,7 @@ module CBin
       end
 
       def binary_source
-        { http: CBin.config.binary_download_url % [code_spec.root.name, code_spec.version], type: CBin.config.download_file_type } 
+        { http: CMod.config.binary_download_url % [code_spec.root.name, code_spec.version], type: CMod.config.download_file_type } 
       end
 
       def code_spec_consumer(platform = :ios)

@@ -1,5 +1,5 @@
 require 'cocoapods'
-require 'cocoapods-bin/native/podfile_env'
+require 'cocoapods-modular/native/podfile_env'
 
 module Pod
   class Podfile
@@ -58,7 +58,7 @@ module Pod
 
     private
     def valid_bin_plugin
-      raise Pod::Informative, 'You should add `plugin \'cocoapods-bin\'` before using its DSL' unless plugins.keys.include?('cocoapods-bin')
+      raise Pod::Informative, 'You should add `plugin \'cocoapods-modular\'` before using its DSL' unless plugins.keys.include?('cocoapods-modular')
     end
 
     # set_hash_value 有 key 限制
